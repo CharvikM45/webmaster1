@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #55d6aa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+    .container2 {
+        width: 80%;
+        margin: 0 auto;    
+    }
+    
+    header  {
+        background: #f4f4f4;
+    }
+    
+    .logo {
+        float: left;
+        width:150px;
+        padding: 14px 0;
+        
+    }
+    
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    
+    }
+    
+    nav {
+        float: right;
+    }
+    
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    
+        position: relative;
+    }
+    
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 17px;
+        position: relative;
+    } 
+    
+    nav a {
+        color: #444;
+        text-decoration: none;
+        text-transform: uppercase; 
+        font-size: 16px;
+    }
+    
+    nav a:hover {
+        color: #000
+    }
+     
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;    
+        width: 100%;
+        background-color: #444;
+
+        top: 0;
+        width:  0%;
+
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 100%
+    }
+        .intro-section {
+            text-align: center;
+            background-color: #BFA100;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 70px; 
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .section {
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-header {
+            position: relative;
+            height: 100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #333;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            margin: 0;
+            padding: 0 30px; 
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25%;  
+            height: 4px; 
+            background: #BFA100;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .section-header span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .street-style .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .biryani .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .noodles .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .curries .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .naans .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .naans .container {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .appetizer-box {
+            perspective: 1500px;
+            width: 300px;
+            height: 400px;
+        }
+
+        .flip-card {
+            width: 100%;
+            height: 400px; 
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .appetizer-box:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card-front {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .flip-card-front img {
+            width: 70%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .flip-card-front .appetizer-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .flip-card-front .price {
+            color: gray;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .flip-card-back {
+            background: #f4f4f4;
+            transform: rotateY(180deg);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer a {
+            color: #BFA100;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "container2">
+            <img src="sd2logo.png" alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="farm_to_table.html">Farm to Table</a></li>
+                    <li><a href="appetizer.html">Appetizers</a></li>
+                    <li><a href="maincourse.html">Main Course</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="drink.html">Drink</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>  
+
+    <div class="intro-section">
+        <h2>Come Taste Our Exquisite Dishes</h2>
+        <p>Indulge in the best dishes made with fresh ingredients and authentic flavors. We offer a variety of options from rich biryanis to delicious curries, and more!</p>
+    </div>
+
+    <div class="section biryani">
+        <div class="section-header"><span>Biryani</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.madhuseverydayindian.com/wp-content/uploads/2022/11/veg-biryani.jpg" alt="Veg Biryani">
+                        <div class="appetizer-name">Veg Biryani</div>
+                        <div class="price">$12.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            A fragrant medley of long-grain basmati rice layered with tender, spiced vegetables and caramelized onions. Delicately perfumed with saffron, cardamom, and cloves, this dish is slow-cooked to perfection, allowing the spices to infuse every grain. Garnished with fried cashews and fresh coriander for a touch of crunch and freshness.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://ministryofcurry.com/wp-content/uploads/2023/10/paneer-biryani_.jpg" alt="Paneer Biryani">
+                        <div class="appetizer-name">Paneer Biryani</div>
+                        <div class="price">$13.49</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            A flavorful feast of basmati rice and marinated paneer cubes layered with fragrant spices, caramelized onions, and a hint of mint. Each grain of rice absorbs the rich aroma of cinnamon, cloves, and saffron, while the paneer remains soft and succulent. Topped with fried onions and nuts, it's a delightful fusion of texture and taste.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section curries">
+        <div class="section-header"><span>Curries</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.eitanbernath.com/wp-content/uploads/2020/05/Butter-Paneer-1-4x5-LOW-RES.jpeg" alt="Butter Paneer">
+                        <div class="appetizer-name">Butter Paneer</div>
+                        <div class="price">$14.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Tender cubes of paneer simmered in a rich, velvety tomato-based gravy infused with aromatic spices and a hint of sweetness. The creamy sauce, made with butter, fresh cream, and a touch of fenugreek, envelops the paneer, creating a luscious dish bursting with warmth and flavor. A sprinkle of fresh coriander completes this comforting classic.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/palak-paneer-1.jpg" alt="Palak Paneer">
+                        <div class="appetizer-name">Palak Paneer</div>
+                        <div class="price">$13.49</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Fresh, creamy spinach purée simmered with golden-fried paneer cubes and a medley of aromatic spices. This vibrant green delicacy is enriched with hints of garlic, ginger, and green chilies, offering a perfect balance of earthy, savory, and mildly spicy notes. Garnished with a swirl of cream for a luxurious finish.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.thecuriouschickpea.com/wp-content/uploads/2018/03/malaikofta-4.jpg.webp" alt="Malai Kofta">
+                        <div class="appetizer-name">Malai Kofta</div>
+                        <div class="price">$15.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Soft, melt-in-your-mouth kofta balls made from paneer, potatoes, and nuts, deep-fried to a golden crisp and simmered in a rich, creamy tomato-cashew gravy. Flavored with aromatic spices, a touch of saffron, and a swirl of cream, this regal dish is finished with a garnish of fresh coriander and slivered almonds for an indulgent treat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section street-style">
+        <div class="section-header"><span>Street</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.homemakerjob.com/wp-content/uploads/2022/05/Chhole-Bhatura-Recipe-Main-Photo-image-by-homemakerjob.com_.jpg" alt="Chole Bhature">
+                        <div class="appetizer-name">Chole Bhature</div>
+                        <div class="price">$11.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Fuffy, golden-brown bhature served alongside a hearty, tangy chickpea curry simmered with onions, tomatoes, and a robust blend of spices. The chole is richly spiced with hints of coriander, cumin, and amchur, while the soft, fluffy bhatura provides the perfect vehicle for scooping up this deliciously spiced combination.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://greedyeats.com/wp-content/uploads/2024/01/Pav-bhaji.jpg" alt="Pav Bhaji">
+                        <div class="appetizer-name">Pav Bhaji</div>
+                        <div class="price">$9.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            This rich velvety mixture called “bhaji” is served with buttery round breads known as “pav”. Each bite of this creation is an explosion of flavors. The bhaji is garnished with coriander, zesty lemon, and a dollop of butter. On the side, there is a crunchy, delicious onion and a wedge of lemon that is ready to be added to the bhaji.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section noodles">
+        <div class="section-header"><span>Noodles</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://thechutneylife.com/wp-content/uploads/2017/09/TYFNgSGl-scaled.jpeg" alt="Veg Hakka Noodles">
+                        <div class="appetizer-name">Veg Hakka Noodles</div>
+                        <div class="price">$10.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Delightful fusion of perfectly cooked noodles, stir-fried to perfection. A medley of crunchy carrots, colorful bell pepper, and cabbage, tossed with thin, springy noodles in a tongue tantalizing wok-seared blend of garlic, soy sauce, and a hint of chili. Crisp yet tender, these noodles are infused with a finishing touch of freshly chopped spring onions, dash of sesame seeds, and a drizzle of our house-made tangy sauce.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://theyummydelights.com/wp-content/uploads/2022/08/egg-hakka-noodles.jpg" alt="Egg Hakka Noodles">
+                        <div class="appetizer-name">Egg Hakka Noodles</div>
+                        <div class="price">$10.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Enticing fusion of soft noodles with savory eggs, all stir-fried to perfection. This delectable dish features noodles, combined with scrambled eggs to create a velvety texture which complements the fresh, crunchy vegetables. The noodles are tossed with finely sliced carrots, bell peppers, spring onions, and cabbage. All are brought into the wok-seared symphony of garlic, soy sauce, and a hint of chili. With our special house-made tangy sauce and a garnish of sesame seeds and spring onions, adds the perfect complement to the dish.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section naans">
+        <div class="section-header"><span>Naans</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://currybliss.com/cdn/shop/products/plain-naan-currybliss.png?v=1590077332" alt="Plain Naan">
+                        <div class="appetizer-name">Plain Naan</div>
+                        <div class="price">$4.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Soft, pillowy bread made with refined flour, yogurt, and a touch of yeast cooked in a tandoor for an aesthetic char.
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://fullofplants.com/wp-content/uploads/2023/05/Homemade-Naan-Bread-Restaurant-Style-Vegan-16.jpg" alt="Butter Naan">
+                        <div class="appetizer-name">Butter Naan</div>
+                        <div class="price">$4.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Soft, pillowy bread made like our premium plain naan but with a generous dollop of melted butter brushed across after being cooked.
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://thewhiskaddict.com/wp-content/uploads/2021/01/IMG_6493-1652x2048.jpg" alt="Garlic Naan">
+                        <div class="appetizer-name">Garlic Naan</div>
+                        <div class="price">$4.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Our premium plain naan infused with minced garlic, usually mixed into the dough or sprinkled on top before cooking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.sprinklesandsprouts.com/wp-content/uploads/2021/06/Bullet-Naan-2.jpg" alt="Bullet Naan">
+                        <div class="appetizer-name">Bullet Naan</div>
+                        <div class="price">$4.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            A spicier version of garlic, topped with green chillies, house-made chili flakes, and a touch of garlic. Excellent for food enthusiasts who want an extra kick.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+<footer>
+    <p>Visit Us | Follow Us on Social Media</p>
+</footer>
+</html>

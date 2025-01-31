@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appetizers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #BFA100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+    .container2 {
+        width: 80%;
+        margin: 0 auto;    
+    }
+    
+    header  {
+        background: #f4f4f4;
+    }
+    
+    .logo {
+        float: left;
+        width:150px;
+        padding: 14px 0;
+        
+    }
+    
+    header::after {
+        content: '';
+        display: table;
+        clear: both;
+    
+    }
+    
+    nav {
+        float: right;
+    }
+    
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    
+        position: relative;
+    }
+    
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 17px;
+        position: relative;
+    } 
+    
+    nav a {
+        color: #444;
+        text-decoration: none;
+        text-transform: uppercase; 
+        font-size: 16px;
+    }
+    
+    nav a:hover {
+        color: #000
+    }
+     
+    nav a::before {
+        content: '';
+        display: block;
+        height: 3px;    
+        width: 100%;
+        background-color: #444;
+
+        top: 0;
+        width:  0%;
+
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 100%
+    }
+        .intro-section {
+            text-align: center;
+            background-color: #BFA100;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 70px; 
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .section {
+            width: 100%;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-header {
+            position: relative;
+            height: 100px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #333;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            margin: 0;
+            padding: 0 30px; 
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25%;  
+            height: 4px; 
+            background: #BFA100;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .section-header span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .paneer .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .appetizer-box {
+            perspective: 1500px;
+            width: 300px;
+            height: 400px;
+        }
+
+        .flip-card {
+            width: 100%;
+            height: 400px; 
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .appetizer-box:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card-front {
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .flip-card-front img {
+            width: 70%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .flip-card-front .appetizer-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .flip-card-front .price {
+            color: gray;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .flip-card-back {
+            background: #f4f4f4;
+            transform: rotateY(180deg);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer a {
+            color: #BFA100;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class = "container2">
+            
+
+            <img href="home_page.html" src="sd2logo.png" alt="logo" class="logo">
+            
+            <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="farm_to_table.html">Farm to Table</a></li>
+                    <li><a href="appetizer.html">Appetizers</a></li>
+                    <li><a href="maincourse.html">Main Course</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="drink.html">Drink</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>  
+    <div class="intro-section">
+        <h2>Come Taste Our Exquisite Appetizers</h2>
+        <p>Indulge in the best appetizers made with fresh ingredients and authentic flavors. From spicy to savory, we have something for every taste!</p>
+    </div>
+
+    <div class="section paneer">
+        <div class="section-header"><span>Paneer</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://masalaandchai.com/wp-content/uploads/2021/10/Chole-Samosa-Chaat.jpg" alt="Paneer Tikka">
+                        <div class="appetizer-name">Paneer Tikka</div>
+                        <div class="price">$8.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Luscious, soft cubes of paneer marinated with an aromatic blend of spices. Individual pieces are coated in tangy lemon and another coat of spices. Then, the savory paneer is skewered on with colorful bell peppers and onions grilled to perfection, offering a tongue-tantalizing smell and taste. Served on the side is our decadent mint chutney with a hint of lemon to add a zesty flavor.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://redchillezlargo.com/wp-content/uploads/2024/08/paner555.png" alt="Paneer 555">
+                        <div class="appetizer-name">Paneer 555</div>
+                        <div class="price">$9.49</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Succulent cubes of paneer, marinated with a mixture of aromatic spices and herbs perfectly sautéed to achieve a tantalizing golden brown crust. Once finished, the paneer is tossed into a blend of colorful bell peppers, onions, and green chilies, adding an aesthetic crunch and burst of freshness. Garnished with freshly chopped coriander, a sprinkle of sesame seeds, and diced green onions, the dish is as visually appealing as the taste. Paired with a generous squeeze of lemon and refreshing mint chutney.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section chaat">
+        <div class="section-header"><span>Chaat</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://masalaandchai.com/wp-content/uploads/2021/10/Chole-Samosa-Chaat.jpg" alt="Samosa Chaat">
+                        <div class="appetizer-name">Samosa Chaat</div>
+                        <div class="price">$7.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            These irresistible golden-brown samosas contain spicy potato chunks, green peas, and herbs. The smashed samosa chunks are generously drizzled with rich tamarind chutney, cool coriander chutney, and creamy yogurt and perfected with a sprinkle of diced onions, fresh cilantro, a dash of chaat masala to provide the extra kick with crisp sev and juicy pomegranates to integrate bursts of crunch and delightful sweetness.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://static01.nyt.com/images/2024/01/17/multimedia/ND-Pani-Puri-mflg/ND-Pani-Puri-mflg-threeByTwoMediumAt2X.jpg?quality=75&auto=webp" alt="Pani Puri">
+                        <div class="appetizer-name">Pani Puri</div>
+                        <div class="price">$6.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Crunchy puris are generously stuffed with a medley of boiled potatoes, chickpeas, and lentils, creating a satisfying pleasure. These are then drenched in a tangy pani infused with a flawless balance of tamarind and mint chutney paired with cumin and black salt. A sweet chutney adds contrast, while a plentiful sprinkle of crunchy sev and coriander enhances the texture and aroma.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2021/11/Dahi-Vada-H1.jpg?w=600&ssl=1" alt="Vada Deluxe">
+                        <div class="appetizer-name">Vada Deluxe</div>
+                        <div class="price">$8.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            The chef's creative, street-style combination of Dahi Vada complemented with a Vada Pav. Soft, fluffy lentil dumpling fritters are served bathed in a creamy yogurt drizzled with a sweet tamarind chutney and zesty, cool green chutney. On the side comes a spicy potato vada sandwiched between two buttery pav buns. Chaat masala, crispy sev, and fresh coriander sprinkled on for the finishing touch inviting a burst of flavors within each bite.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://shwetainthekitchen.com/wp-content/uploads/2022/01/bhel-puri.jpg" alt="Puri Fusion">
+                        <div class="appetizer-name">Puri Fusion</div>
+                        <div class="price">$7.49</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Crisp, bite-sized puris are filled with a plentiful mix of puffed rice, diced onions, tomatoes, and boiled potatoes tossed in a rich tamarind chutney, tangy green chutney, and a healthy squeeze of fresh lemon. Each puri is topped with crispy sev, pomegranate seeds, and fresh coriander providing bursts of flavor.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section manchuria">
+        <div class="section-header"><span>Manchuria</span></div>
+        <div class="container">
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://www.indianveggiedelight.com/wp-content/uploads/2021/07/gobi-manchurian-1.jpg" alt="Gobi Manchurian">
+                        <div class="appetizer-name">Gobi Manchurian</div>
+                        <div class="price">$8.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Crispy cauliflower florets deep-fried and then sautéed in a bold, spicy, and tangy sauce, the Gobi Manchurian is a delight for your taste buds. Topped with spring onions and green chilies, this dish combines crispy with savory, resulting in a flavor-packed experience perfect for snacking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://vaya.in/recipes/wp-content/uploads/2018/03/Paneer-Manchurian.jpg" alt="Paneer Manchurian">
+                        <div class="appetizer-name">Paneer Manchurian</div>
+                        <div class="price">$9.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            A crispy, tangy, and savory treat made from soft cubes of paneer. These are deep-fried and tossed in a flavorful sauce made with soy sauce, garlic, ginger, and green chili. The dish is perfect for those who love bold and spicy flavors, topped with fresh coriander and spring onions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://greenbowl2soul.com/wp-content/uploads/2019/05/chili-baby-corn-1.jpg" alt="Chili Baby Corn">
+                        <div class="appetizer-name">Chili Baby Corn</div>
+                        <div class="price">$8.49</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            Sizzling and crispy baby corn stir-fried with a perfect blend of chili, garlic, and soy sauce. This dish has a spicy kick balanced with sweetness and tanginess, offering an irresistible flavor that’s crunchy on the outside and soft inside.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="appetizer-box">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="https://holycowvegan.net/wp-content/uploads/2020/03/veg-manchurian-6.jpg" alt="Veg Manchurian">
+                        <div class="appetizer-name">Veg Manchurian</div>
+                        <div class="price">$8.99</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="description">
+                            A flavorful mix of shredded vegetables like cabbage, carrots, and capsicum, deep-fried into bite-sized balls. Tossed in a spicy, tangy sauce that combines soy sauce, ginger, garlic, and chili, Veg Manchurian brings a burst of flavor that is sure to satisfy your taste buds. Perfect for anyone who loves a good fusion of flavors.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>Visit Us | Follow Us on Social Media</p>
+</footer>
+</html>

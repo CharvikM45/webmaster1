@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: lightgrey;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 0;
+        }
+
+        .container2 {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 150px;
+            padding: 14px 0;
+            float: left;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 70px;
+            padding-top: 17px;
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        nav a::before {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: #444;
+            top: 0;
+            width: 0%;
+            transition: width 250ms ease-in-out;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        .bg {
+            background-image: url(/Users/charvik/Downloads/tablebg.png);
+            background-size: cover;
+            height: 470px;
+        }
+
+        .heading {
+            color: white;
+            position: absolute;
+            top: 30%;
+            text-align: right;
+            padding-left: 20%;
+            font-size: 40px;
+        }
+
+        .head2 {
+            color: white;
+            position: absolute;
+            top: 40%;
+            text-align: right;
+            padding-left: 20%;
+            font-size: 15px;
+        }
+
+        .btn, .btn2, .btn3 {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #BFA100;
+            position: absolute;
+            font-size: 18px;
+            border: none;
+            height: 40px;
+            border-radius: 12px;
+            text-align: right;
+            color: white;
+        }
+
+        .btn {
+            top: 50%;
+            margin-left: 20%;
+        }
+
+        .btn2 {
+            top: 50%;
+            margin-left: 40%;
+        }
+
+        .btn3 {
+            top: 50%;
+            margin-left: 60%;
+        }
+
+        .menu {
+            background: #eef0ec;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .menu h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 200px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .menu-item h4 {
+            margin-top: 10px;
+        }
+
+        .menu-item p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .hdh {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .farmtable {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .farmdesc {
+            font-size: 16px;
+            margin-top: 10px;
+            color: black;
+        }
+
+        .btn4 {
+            background-color: lightcyan;
+            font-family: 'Quicksand', sans-serif;
+            position: relative;
+            top: -10px;
+            font-size: 18px;
+            border: none;
+            height: 40px;
+            border-radius: 12px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0 auto;
+        }
+
+
+        .hdh {
+            margin-top: 30px;
+        }
+
+        .farmtable, .farmdesc {
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container2">
+            <img src=sd2logo.png alt="logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="farm_to_table.html">Farm to Table</a></li>
+                    <li><a href="appetizer.html">Appetizers</a></li>
+                    <li><a href="maincourse.html">Main Course</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="drink.html">Drink</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bg">
+        <h1 class="heading">Taste the Authentic</h1>
+        <h2 class="head2">Experience the best of Indian Cuisine</h2>
+        <h3>
+            <a href="appetizer.html">
+                <button class="btn">Visit Our Appetizers</button>
+            </a>
+            <a href="maincourse.html">
+                <button class="btn2">Visit Our Main Course</button>
+            </a>
+            <a href="dessert.html">
+                <button class="btn3">Visit Our Dessert</button>
+            </a>
+        </h3>
+    </div>
+
+    <section class="menu">
+        <h2>Savor authentic Indian flavors</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="https://ministryofcurry.com/wp-content/uploads/2023/10/paneer-biryani_.jpg" alt="Paneer Biryani">
+                <h4>Paneer Biryani</h4>
+                <p>A flavorful biryani infused with soft, luscious paneer cubes.</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2021/11/Dahi-Vada-H1.jpg?w=600&ssl=1" alt="Vada Deluxe">
+                <h4>Vada Deluxe</h4>
+                <p>The two vadas bring together the best of Indian Street food. One is a cool tangy delight, and one is a spicy crispy bite.</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://shwetainthekitchen.com/wp-content/uploads/2022/01/bhel-puri.jpg" alt="Chaat">
+                <h4>Puri Fusion</h4>
+                <p>This trio of India's most beloved chaat promises an irresistible explosion of taste in every bite, with unique textures and flavors.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="hdh">
+        <h1 class="farmtable">Our Farm to Table Initiative</h1>
+        <p class="farmdesc">
+            Our restaurant is completely farm-to-table. We get all of our vegetables delivered from a farm daily, just 5 miles from here.<br>
+            We also get our milk and other ingredients from the same farm. All the food you see here is brought from the farm and made here daily!<br><br>
+            If you want to learn more about our farm-to-table initiative, click the button below!
+        </p>
+        <a href="farm_to_table.html">
+            <button class="btn4">Farm to Table</button>
+
+
+        </a>
+    </div>
+</body>
+<footer>
+    <p>Visit Us | Follow Us on Social Media</p>
+</footer>
+</html>
